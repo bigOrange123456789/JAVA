@@ -31,14 +31,14 @@ public class ShoppingCarServlet  extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession();//获得session对象
+		HttpSession session = request.getSession();//获得session对象//"123456"
 		HashMap<String, Integer> car = (HashMap<String, Integer>)session.getAttribute("shoppingCar");//获得请求头中的属性
+		System.out.println(session.getId());
 		if(car==null)car= new HashMap<String,Integer>();
 		
 		String[] books = request.getParameterValues("book");//输入的变量名称为book
 		if(books!=null && books.length>0) {
 			for(String bookName:books) {
-				
 				if(car.get(bookName)!=null) {
 					int num=car.get(bookName);
 					car.put(bookName,num+1);

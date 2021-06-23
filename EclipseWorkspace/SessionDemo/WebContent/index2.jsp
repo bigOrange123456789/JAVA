@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<h2>请选择要购买的书籍：</h2>
 	<!-- 变量名称为book -->
 	<Form action="ShoppingCarServlet"method ="POST">
@@ -15,5 +16,7 @@
 		<p> <input type="checkbox" name="book" value="书籍3"/>书籍3</p>
 		<p> <input type="submit" value="提交"/></p>
 	</Form>
+
+	<%="当前的会话ID为:"+session.getId()%>
 </body>
 </html>
